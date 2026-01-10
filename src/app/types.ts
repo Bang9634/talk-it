@@ -40,3 +40,18 @@ export interface AuthState {
   user: User | null;
   anonymousUser: AnonymousUser | null;
 }
+
+export interface OnlineUser {
+  userId: string;
+  username: string;
+  maskedIp?: string;
+  connectedAt: number;
+  isAuthenticated: boolean;
+}
+
+export interface UserListResponse {
+  type: 'USER_LIST';
+  users: OnlineUser[];
+  totalCount: number;
+  timestamp: number;
+}
